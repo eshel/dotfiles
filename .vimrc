@@ -3,41 +3,42 @@ set nocompatible	                " vim, not vi
 filetype off				" seems to be required for vundle
 
 " Vundle initialization stuff
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required!
-Bundle 'gmarik/vundle'
-filetype plugin indent on
-
-" list bundle installs here
+Plugin 'gmarik/Vundle.vim'
 
 " Colors
-Bundle "altercation/vim-colors-solarized"
-Bundle "tomasr/molokai"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 
 " Syntax
-Bundle "tpope/vim-markdown"
-Bundle "pangloss/vim-javascript"
-Bundle "briangershon/html5.vim"
-Bundle "sukima/xmledit"
-Bundle "css3"
-Bundle "django.vim"
-Bundle "python.vim--Vasiliev"
-Bundle "indentpython.vim"
+Plugin 'tpope/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'briangershon/html5.vim'
+Plugin 'sukima/xmledit'
+Plugin 'css3'
+Plugin 'django.vim'
+Plugin 'python.vim--Vasiliev'
+Plugin 'indentpython.vim'
 let python_highlight_all=1          " Enable all plugin's highlighting
 let python_print_as_function=1      " Color 'print' function
 
-Bundle "scrooloose/syntastic"
+Plugin 'scrooloose/syntastic'
 
 " Other plugins
-Bundle "camelcasemotion"
-Bundle "scrooloose/nerdcommenter"
-Bundle "AutoTag"
+Plugin 'camelcasemotion'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'AutoTag'
 
 " Git
-Bundle "tpope/vim-fugitive"
-Bundle "airblade/vim-gitgutter"
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
+filetype plugin indent on
+
 
 
 " vim-thrift
