@@ -130,8 +130,6 @@ alias fn='find . -name '
 
 alias watchmem="watch -n 1 -c -d 'free -m'"
 
-alias psqlp="psql -h rs.pinky.doit9.com -p 5439 --user pinky -d evmemain"
-
 alias gits="git status"
 alias gitsmu="git submodule update --init --recursive"
 alias gitlg="git lg"
