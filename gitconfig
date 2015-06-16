@@ -1,0 +1,19 @@
+[user]
+	name = Amir Eshel
+	email = amir@eshel.com
+[push]
+	default = current
+[color]
+	diff = true
+	interactive = auto
+	satus = auto
+	ui = true
+[log]
+	decorate = short
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/amire/.gitignore_global
+	editor = /usr/bin/vim
