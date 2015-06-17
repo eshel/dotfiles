@@ -4,6 +4,7 @@ filetype off				" seems to be required for vundle
 
 " Vundle initialization stuff
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
 " let Vundle manage Vundle, required!
