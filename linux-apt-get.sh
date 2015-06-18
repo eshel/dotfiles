@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Lets make aliases expand in this script, even though we're not in interactive shell mode
+shopt -s expand_aliases
+
 alias aptinstall="sudo apt-get install -y"
 
 # Repositories
@@ -20,8 +23,8 @@ aptinstall git gitg
 aptinstall build-essential autoconf automake libtool cmake zlib1g-dev pkg-config libssl-dev
 aptinstall bzip2 libbz2-dev
 
-
 # Python
+aptinstall python python-pip python-virtualenv python-pip3
 
 # Autoremove unnecessary stuff
 sudo apt-get autoremove -y
