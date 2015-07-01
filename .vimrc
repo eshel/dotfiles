@@ -161,3 +161,7 @@ set numberwidth=5   " width of numbers column
 " Syntastic settings
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['pyflakes', 'python']
+
+" Force saving files that require root permission 
+cnoremap w!! w !sudo tee > /dev/null %
+
