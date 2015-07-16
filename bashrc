@@ -127,6 +127,7 @@ alias meminfo='free -m -l -t'
 alias tree='tree -Csuh'
 
 alias fn='find . -name '
+alias psg='ps -aux | grep -i ' 
 
 alias watchmem="watch -n 1 -c -d 'free -m'"
 
@@ -285,6 +286,8 @@ export LC_ALL=C
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8 sublime_text
 
+
+alias subl="LANG=en_US.UTF-8 subl"
 
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
