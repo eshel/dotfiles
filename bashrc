@@ -204,6 +204,10 @@ pyclean() {
     echo "Removed" `find -name "*.pyo" -print -exec rm -f {} \; | wc -l` "pyo Files"
 }
 
+symrun() {
+    php app/console server:run
+}
+
 hh() {
 
     _usage() { 
