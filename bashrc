@@ -297,6 +297,8 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/eshel/.gvm/bin/gvm-init.sh" ]] && source "/Users/eshel/.gvm/bin/gvm-init.sh"
