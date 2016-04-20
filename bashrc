@@ -298,7 +298,11 @@ if [ -f ~/.bash_local ]; then
 fi
 
 alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
+alias dockerenv='eval "$(docker-machine env default)"'
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/eshel/.gvm/bin/gvm-init.sh" ]] && source "/Users/eshel/.gvm/bin/gvm-init.sh"
