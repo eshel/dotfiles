@@ -127,7 +127,7 @@ alias meminfo='free -m -l -t'
 alias tree='tree -Csuh'
 
 alias fn='find . -name '
-alias psg='ps -aux | grep -i ' 
+alias psg='ps -aux | grep -i '
 
 alias watchmem="watch -n 1 -c -d 'free -m'"
 
@@ -138,8 +138,6 @@ alias gitclean="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 
 
 alias studiokeyboard="ibus-daemon -rd"
-
-
 
 
 cdir () { mkdir $@ && cd $@; } #create a dir and cd into it
@@ -210,7 +208,7 @@ symrun() {
 
 hh() {
 
-    _usage() { 
+    _usage() {
         echo "usage: YOUR_COMMAND | hh [-i] [-d] args...
     -i : ignore case
     -d : disable regexp"
@@ -219,14 +217,14 @@ hh() {
     local _OPTS
 
     # detect pipe or tty
-    if test -t 0; then 
+    if test -t 0; then
         _usage
         return
     fi
 
     # magae flags
     while getopts ":idQ" opt; do
-        case $opt in 
+        case $opt in
            i) _OPTS+=" -i " ;;
            d)  _OPTS+=" -Q " ;;
            Q)  _OPTS+=" -Q " ;;
@@ -235,7 +233,7 @@ hh() {
                 return ;;
         esac
     done
-    
+
     shift $(($OPTIND - 1))
 
     # check maximum allowed input
@@ -291,14 +289,12 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8 sublime_text
 
 
-alias subl="LANG=en_US.UTF-8 subl"
-
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
 alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
-alias dockerenv='eval "$(docker-machine env default)"'
+alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
