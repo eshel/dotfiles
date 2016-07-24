@@ -293,8 +293,8 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-if [ -f ~/.env_local ]; then
-    . ~/.env_local
+if [ -f ~/.zg_env ]; then
+    . ~/.zg_env
 fi
 
 alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
