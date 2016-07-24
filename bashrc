@@ -295,6 +295,7 @@ fi
 
 alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
 alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
+alias dockerenv='eval "$(docker-machine env default)"'
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
