@@ -300,6 +300,7 @@ fi
 alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
 alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
 alias dockerenv='eval "$(docker-machine env default)"'
+alias dockerclear="dockerenv && docker rm -f $(docker ps -a -q | sort) && docker rmi -f $(docker images -q | sort)"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
