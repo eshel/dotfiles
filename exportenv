@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: ${0##*/} <envfile> <outfile>"
+	exit 1
+fi
+
+envfile=$1
+outfile=$2
+
+echo "Exporting all variables in $envfile to shell environment"
+
+echo '#!/bin/sh' > $outfile
+while read -r in; do
+  [[ "$in" =~ ^# ]] && continue
+  [ -z "$in" ] && continue
+  if [[ "$in" == *"="* ]]
+  then
+    IFS='=' read -ra LINE <<< "$in"
+    echo -e "export $in" >> $outfile
+  else
+    echo "${0##*/} - Invalid line:"
+    echo $in
+    echo "File $1 contained invalid lines. Lines should be of the form: '#comment' or 'VAR=VAL'"
+    exit 1
+  fi
+done < "$envfile"

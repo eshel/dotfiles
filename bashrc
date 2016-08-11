@@ -210,8 +210,8 @@ hh() {
 
     _usage() {
         echo "usage: YOUR_COMMAND | hh [-i] [-d] args...
-    -i : ignore case
-    -d : disable regexp"
+        -i : ignore case
+        -d : disable regexp"
     }
 
     local _OPTS
@@ -264,13 +264,6 @@ hh() {
     cat - | eval $_COMMAND
 }
 
-evwifi() {
-    sudo pkill -9 wpa_supplicant
-    sudo ifconfig wlan0 down
-    sudo ifconfig wlan0 up
-}
-
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -288,19 +281,22 @@ export LC_ALL=C
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8 sublime_text
 
+alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
+alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
+
+dockerenv () {
+    eval "$(docker-machine env default)"
+}
+
+dockerclear () {
+    dockerenv
+    docker rm -f $(docker ps -a -q | sort)
+    docker rmi -f $(docker images -q | sort)
+}
 
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
-
-if [ -f ~/.zg_env ]; then
-    . ~/.zg_env
-fi
-
-alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
-alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
-alias dockerenv='eval "$(docker-machine env default)"'
-alias dockerclear="dockerenv && docker rm -f $(docker ps -a -q | sort) && docker rmi -f $(docker images -q | sort)"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
