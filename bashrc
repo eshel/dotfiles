@@ -83,16 +83,9 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -119,7 +112,7 @@ alias cd.6='cd ../../../../../../'
 alias cd.7='cd ../../../../../../../'
 
 alias vi=vim
-alias fastping='ping -c 100 -s.2'
+alias fastping='ping -c 100 -s 2'
 
 alias ports='netstat -tulanp'
 alias meminfo='free -m -l -t'
@@ -136,9 +129,7 @@ alias gitsmu="git submodule update --init --recursive"
 alias gitlg="git lg"
 alias gitclean="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 
-
-alias studiokeyboard="ibus-daemon -rd"
-
+alias a="atom -a"
 
 cdir () { mkdir $@ && cd $@; } #create a dir and cd into it
 
@@ -200,10 +191,6 @@ bashreload() {
 pyclean() {
     echo "Removed" `find -name "*.pyc" -print -exec rm -f {} \; | wc -l` "pyc Files"
     echo "Removed" `find -name "*.pyo" -print -exec rm -f {} \; | wc -l` "pyo Files"
-}
-
-symrun() {
-    php app/console server:run
 }
 
 hh() {
@@ -280,9 +267,6 @@ shopt -s histappend
 export LC_ALL=C
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8 sublime_text
-
-alias zgssh="ssh -i ~/.ssh/tradebot-us-east-1.pem -A -l ubuntu"
-alias gcpssh="ssh -i ~/.ssh/google_compute_engine -A"
 
 dockerenv () {
     eval "$(docker-machine env default)"
