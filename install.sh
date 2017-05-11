@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 # Installation script for creating the symbolic links from the repository (under ~/.bash/.bash*) to the expected locations of the bash files (~/.bash*)
 
-rm -f ~/.bashrc ~/.gitconfig ~/.gitignore_global ~/.vimrc
+rm -f ~/.zshrc ~/.gitconfig ~/.gitignore_global ~/.vimrc
 
-ln -s ~/dotfiles/bashrc ~/.bashrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 
@@ -20,4 +20,3 @@ vim +PluginInstall +qall
 brew install git bash-completion
 
 echo "done"
-
