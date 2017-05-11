@@ -139,6 +139,13 @@ alias a="atom -a"
 # Find a file with a pattern in name:
 ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 
+
+#cd history, adapted from http://www.petefreitag.com/item/66.cfm
+rvmcd () { cd $1;}
+#this is here since it overrides rvm's cd function which I don't like much
+function cd { if [ -n "$1" ]; then pushd "$1" >/dev/null; else pushd "$HOME" >/dev/null; fi; }
+alias bd='popd >/dev/null'
+
 if [ -f ~/.sh_local ]; then
     . ~/.sh_local
 fi
