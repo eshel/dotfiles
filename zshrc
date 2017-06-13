@@ -7,7 +7,17 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time)
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
+DEFAULT_USER=eshel
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -115,17 +125,10 @@ alias cd.6='cd ../../../../../../'
 alias cd.7='cd ../../../../../../../'
 
 alias vi=vim
-alias fastping='ping -c 100 -s 2'
-
-alias ports='netstat -tulanp'
-alias meminfo='free -m -l -t'
 
 alias tree='tree -Csuh'
 
 alias fn='find . -name '
-alias psg='ps -aux | grep -i '
-
-alias watchmem="watch -n 1 -c -d 'free -m'"
 
 alias gits="git status"
 alias gitsmu="git submodule update --init --recursive"
@@ -149,3 +152,9 @@ if [ -f ~/.sh_local ]; then
 fi
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
