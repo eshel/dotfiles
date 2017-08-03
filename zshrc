@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
@@ -23,7 +23,7 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=1
-DEFAULT_USER=eshel
+DEFAULT_USER=zenguest
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -146,13 +146,6 @@ alias a="atom -a"
 # Find a file with a pattern in name:
 ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 
-
-#cd history, adapted from http://www.petefreitag.com/item/66.cfm
-rvmcd () { cd $1;}
-#this is here since it overrides rvm's cd function which I don't like much
-function cd { if [ -n "$1" ]; then pushd "$1" >/dev/null; else pushd "$HOME" >/dev/null; fi; }
-alias bd='popd >/dev/null'
-
 if [ -f ~/.sh_local ]; then
     . ~/.sh_local
 fi
@@ -164,3 +157,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -s "/Users/zenguest/.scm_breeze/scm_breeze.sh" ] && source "/Users/zenguest/.scm_breeze/scm_breeze.sh"
