@@ -31,7 +31,7 @@ Plugin 'scrooloose/syntastic'
 " Other plugins
 Plugin 'camelcasemotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'AutoTag'
+" Plugin 'AutoTag'
 
 " Git
 Plugin 'tpope/vim-fugitive'
