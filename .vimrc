@@ -23,6 +23,8 @@ Plugin 'css3'
 Plugin 'django.vim'
 Plugin 'python.vim--Vasiliev'
 Plugin 'indentpython.vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
 let python_highlight_all=1          " Enable all plugin's highlighting
 let python_print_as_function=1      " Color 'print' function
 
