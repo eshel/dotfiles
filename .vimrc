@@ -25,6 +25,7 @@ Plugin 'python.vim--Vasiliev'
 Plugin 'indentpython.vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
+
 let python_highlight_all=1          " Enable all plugin's highlighting
 let python_print_as_function=1      " Color 'print' function
 
@@ -33,7 +34,6 @@ Plugin 'scrooloose/syntastic'
 " Other plugins
 Plugin 'camelcasemotion'
 Plugin 'scrooloose/nerdcommenter'
-" Plugin 'AutoTag'
 
 " Git
 Plugin 'tpope/vim-fugitive'
