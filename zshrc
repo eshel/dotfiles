@@ -1,8 +1,5 @@
-# For python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# For python and bash
+export PATH="/usr/local/opt/python/libexec/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,19 +10,23 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #
 
-POWERLEVEL9K_MODE='nerdfont-complete'
+#ZSH_THEME="spaceship"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
 POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
 POWERLEVEL9K_VCS_HIDE_BRANCH_ICON=true
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes)
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=1
+POWERLEVEL9K_STATUS_HIDE_SIGNAME=false
+POWERLEVEL9K_STATUS_OK=false
 DEFAULT_USER=eshel
 
 # Uncomment the following line to use case-sensitive completion.
@@ -184,3 +185,4 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
