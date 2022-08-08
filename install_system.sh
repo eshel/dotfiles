@@ -1,19 +1,29 @@
 #!/bin/sh
 # Installation script for creating the symbolic links from the repository (under ~/.bash/.bash*) to the expected locations of the bash files (~/.bash*)
 
+
+echo "Installing Homebrew first"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Updating Brew"
 brew update
-brew tap caskroom/cask
-brew tap caskroom/fonts
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew update
-brew cask install font-hack-nerd-font
+brew install --cask font-hack-nerd-font
+
+echo "Overriding dotfiles"
 
 rm -f ~/.zshrc ~/.gitconfig ~/.gitignore_global ~/.vimrc
+
+echo "Fetching oh-my-zsh and plugins"
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 
+echo "Overriding dotfiles"
 
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
