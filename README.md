@@ -1,5 +1,11 @@
-bashcfg
-=======
+dotfiles
+========
+
+Before Installing
+-----------------
+
+1. Make sure github is set up correctly with private SSH key for the new machine
+
 
 Installation
 ------------

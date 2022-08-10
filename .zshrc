@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # For python and bash
 export PATH="/usr/local/opt/python/libexec/bin:$HOME/bin:/usr/local/bin:$PATH"
 
@@ -89,11 +91,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -146,7 +143,6 @@ alias gitsmu="git submodule update --init --recursive"
 alias gitlg="git lg"
 alias gitclean="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 
-alias a="atom -a"
 
 # Find a file with a pattern in name:
 ff() { find . -type f -iname '*'"$*"'*' -ls ; }
